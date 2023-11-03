@@ -46,7 +46,7 @@ class MyAdapter(private  val userList: ArrayList<User>): RecyclerView.Adapter<My
     override fun getItemCount(): Int {
         return userList.size
     }
-    
+
     @Suppress("DEPRECATION")
     class MyViewHolder(itemView: View, listener: OnItemClickListener):RecyclerView.ViewHolder(itemView) {
         val username : TextView = itemView.findViewById(R.id.username)
