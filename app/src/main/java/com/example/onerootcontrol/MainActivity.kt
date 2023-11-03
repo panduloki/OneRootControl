@@ -30,6 +30,13 @@ import androidx.core.view.WindowInsetsControllerCompat
 import androidx.fragment.app.Fragment
 import com.example.onerootcontrol.databinding.ActivityMainBinding
 
+// Recycler view
+// https://www.youtube.com/watch?v=VVXKVFyYQdQ
+
+// when recycler item clicked navigate to new view
+// https://www.youtube.com/watch?v=WqrpcWXBz14
+// https://www.youtube.com/watch?v=dB9JOsVx-yY
+// https://www.youtube.com/watch?v=EoJX7h7lGxM
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     companion object {

@@ -62,8 +62,6 @@ class HomeFragment : Fragment() {
 //
 //    }
 
-
-
     private fun getUserdata()
     {
         val db = Firebase.firestore

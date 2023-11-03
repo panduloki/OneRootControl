@@ -56,6 +56,7 @@ class MyAdapter(private  val userList: ArrayList<User>): RecyclerView.Adapter<My
         var noOfCoconuts : TextView = itemView.findViewById(R.id.coconutNo)
         val mobileNo : TextView = itemView.findViewById(R.id.mobileNo)
 
+        // user clicked
         init {
             itemView.setOnClickListener {
                 listener.onItemClick(adapterPosition)
