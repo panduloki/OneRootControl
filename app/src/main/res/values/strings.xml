@@ -46,6 +46,7 @@
     <string name="sync_profile_data_text">sync profile data</string>
     <string name="locationAutoText">Choose Location\n</string>
     <string name="roleText">user</string>
+    <string name="session_user_name">username:</string>
 
     <string-array name="location_list">
         <item>Chamrajnagar</item>
