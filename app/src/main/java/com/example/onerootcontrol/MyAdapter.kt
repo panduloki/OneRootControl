@@ -11,12 +11,26 @@ import androidx.recyclerview.widget.RecyclerView
 
 // when recycler item clicked navigate to new view
 // https://www.youtube.com/watch?v=WqrpcWXBz14
+// https://www.youtube.com/watch?v=dB9JOsVx-yY
+// https://www.youtube.com/watch?v=EoJX7h7lGxM
 
 class MyAdapter(private  val userList: ArrayList<User>): RecyclerView.Adapter<MyAdapter.MyViewHolder>(){
 
+    // on click listener
+    private lateinit var mListener: OnItemClickListener
+    interface OnItemClickListener{
+        fun onItemClick(position: Int)
+    }
+
+    fun setOnClickListener(listener: OnItemClickListener){
+        mListener = listener
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.user_item, parent, false)
-        return MyViewHolder(itemView)
+
+        // return with m listener
+        return MyViewHolder(itemView, mListener)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
@@ -32,14 +46,21 @@ class MyAdapter(private  val userList: ArrayList<User>): RecyclerView.Adapter<My
     override fun getItemCount(): Int {
         return userList.size
     }
-
-    class MyViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
+    
+    @Suppress("DEPRECATION")
+    class MyViewHolder(itemView: View, listener: OnItemClickListener):RecyclerView.ViewHolder(itemView) {
         val username : TextView = itemView.findViewById(R.id.username)
         val location : TextView = itemView.findViewById(R.id.location)
         val role : TextView = itemView.findViewById(R.id.role)
         var noOfSessions : TextView = itemView.findViewById(R.id.SessionsNo)
         var noOfCoconuts : TextView = itemView.findViewById(R.id.coconutNo)
         val mobileNo : TextView = itemView.findViewById(R.id.mobileNo)
+
+        init {
+            itemView.setOnClickListener {
+                listener.onItemClick(adapterPosition)
+            }
+        }
     }
 
 
